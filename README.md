@@ -48,7 +48,7 @@ A cost-optimized, event-driven serverless architecture deployed across two AWS r
 - Audit logging in DynamoDB per region
 - Serverless container orchestration with ECS Fargate
 
-For a deeper technical breakdown of components and data flow, Please refer `[ARCHITECTURE.md](docs/ARCHITECTURE.md)`.
+For a deeper technical breakdown of components and data flow, Please refer [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ### Deployment Regions
 
@@ -81,7 +81,7 @@ For a deeper technical breakdown of components and data flow, Please refer `[ARC
 - **Terraform >= 1.7.5**.
 - **Python 3.12** (for Lambda packaging and tooling).
 - **Required tools**: `curl`, `jq`, `zip`.
-- **GitHub Actions secrets (if using CI)**: `TF_STATE_BUCKET`, `TF_VAR_USER_EMAIL`, `TF_VAR_REPO_URL`, `TEST_PASSWORD`, `AWS_OIDC_ROLE_ARN` (see `[CI_CD.md](docs/CI_CD.md)`).
+- **GitHub Actions secrets (if using CI)**: `TF_STATE_BUCKET`, `TF_VAR_USER_EMAIL`, `TF_VAR_REPO_URL`, `TEST_PASSWORD`, `AWS_OIDC_ROLE_ARN` (see [CI_CD.md](docs/CI_CD.md)).
 - **Test user credentials**: A Cognito user email and password to use via `TEST_USERNAME` / `TEST_PASSWORD` when running integration tests.
 
 ### Initial Deployment Steps
@@ -199,7 +199,7 @@ The GitHub Actions workflow (`.github/workflows/deploy.yml`) provides:
 - **Plan & deploy**: Multi-region Terraform `plan`/`apply` using OIDC-based AWS credentials
 - **Integration tests**: Runs `./scripts/test_endpoints.sh` against both regions after deployment
 
-For a detailed job-by-job diagram and explanation of conditional behavior, see `[CI_CD.md](docs/CI_CD.md)`.
+For a detailed job-by-job diagram and explanation of conditional behavior, see [CI_CD.md](docs/CI_CD.md).
 
 ## Terraform Modules
 
@@ -225,7 +225,7 @@ This project uses reusable Terraform modules for infrastructure provisioning:
 - Built-in validation for required parameters
 - Outputs for cross-module references
 
-For detailed module documentation including inputs, outputs, and usage examples, see `[TERRAFORM_SETUP.md](docs/TERRAFORM_SETUP.md#10-module-reference)`.
+For detailed module documentation including inputs, outputs, and usage examples, see [TERRAFORM_SETUP.md](docs/TERRAFORM_SETUP.md#10-module-reference).
 
 ## Security Features
 
@@ -263,9 +263,9 @@ For detailed module documentation including inputs, outputs, and usage examples,
 
 ## Documentation
 
-- `[ARCHITECTURE.md](docs/ARCHITECTURE.md)` - System design, component breakdown, and data flows
-- `[TERRAFORM_SETUP.md](docs/TERRAFORM_SETUP.md)` - Terraform setup, deployment guide, and module reference
-- `[CI_CD.md](docs/CI_CD.md)` - CI/CD workflow details
+- [ARCHITECTURE.md](docs/ARCHITECTURE.md) - System design, component breakdown, and data flows
+- [TERRAFORM_SETUP.md](docs/TERRAFORM_SETUP.md) - Terraform setup, deployment guide, and module reference
+- [CI_CD.md](docs/CI_CD.md) - CI/CD workflow details
 - [Terraform Modules](terraform/modules/) - Individual module READMEs with usage examples
 - [GitHub Actions workflow](.github/workflows/deploy.yml) - CI/CD pipeline configuration test
 
