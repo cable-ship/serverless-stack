@@ -26,7 +26,7 @@ resource "aws_lambda_permission" "sns" {
 }
 
 resource "aws_sns_topic_subscription" "this" {
-  for_each = var.subscriptions
+  for_each = var.create_topic ? var.subscriptions : {}
 
   topic_arn = local.topic_arn
   protocol  = each.value.protocol
