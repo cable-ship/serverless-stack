@@ -8,7 +8,7 @@ def handler(event, context):
 
     region = os.environ.get("AWS_REGION", "unknown")
     sns_topic_arn = os.environ.get("SNS_TOPIC_ARN")
-    user_email = os.environ.get("USER_EMAIL", "")
+    payload_email = os.environ.get("PAYLOAD_EMAIL", "")
     repo_url = os.environ.get("REPO_URL", "")
 
     if not sns_topic_arn:
@@ -21,7 +21,7 @@ def handler(event, context):
     message = {
         "type": "USER_GREETED",
         "region": region,
-        "email": user_email,
+        "email": payload_email,
         "repo": repo_url,
     }
 

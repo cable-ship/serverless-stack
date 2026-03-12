@@ -72,7 +72,7 @@ def handler(event, context):
         message = {
             "type": "USER_GREETED",
             "region": region,
-            "email": os.environ.get("USER_EMAIL", ""),
+            "email": os.environ.get("PAYLOAD_EMAIL", ""),
             "repo": os.environ.get("REPO_URL", ""),
         }
         write_to_dynamodb(message)
